@@ -1,0 +1,20 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "CarData",
+            "CarChart"
+        ],
+        "name": "CarListings",
+        "stores": [
+            "CarDataStore",
+            "CarChartStore"
+        ]
+    },
+    "designerId": "application"
+}

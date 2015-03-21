@@ -1,0 +1,38 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarChart"
+    },
+    "designerId": "d1f4890c-f0e8-49f7-8d9d-9bd45e06e878",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "7e4cbd33-3e2c-457f-97cf-ee8371cbf580"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rating"
+            },
+            "designerId": "6b7e9777-9716-45e0-80b1-9348a281df4d"
+        }
+    ]
+}
