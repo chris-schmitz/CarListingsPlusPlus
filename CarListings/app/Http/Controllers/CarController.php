@@ -25,6 +25,22 @@ class CarController extends Controller {
                     ["name"=> 'accessories', "rating"=> 2] 
                 ]
             ];
+        $data[] = 
+            [
+                "manufacturer" =>  'Toyota',
+                "model" =>  'Celica',
+                "price" =>  35000,
+                "wiki" =>  'http://en.wikipedia.org/wiki/Porsche_997',
+                "img" =>  '2004_Porsche_911_Carrera_type_997.jpg',
+                "quality" =>  [ 
+                    ["name" => 'overall', "rating"=> 4 ], 
+                    ["name"=> 'mechanical', "rating"=> 2], 
+                    ["name"=> 'powertrain', "rating"=> 8], 
+                    ["name"=> 'body', "rating"=> 8],
+                    ["name"=> 'interior', "rating"=> 0],
+                    ["name"=> 'accessories', "rating"=> 2] 
+                ]
+            ];
         return compact('data');
     }
 }
