@@ -1,0 +1,35 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mypanel8",
+        "designer|userClassName": "CarDetails",
+        "itemId": "detailPanel",
+        "margin": "",
+        "title": null
+    },
+    "designerId": "4e3fd824-4784-4edf-996a-abb2ce74cfcd",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "<img src=\"data/{img}\" style=\"float:right\" />",
+                    "Manufacturer: {manufacturer}",
+                    "Model: <a href=\"{wiki}\" target=\"_blank\">{model}</a><br /> Price: {price:usMoney}"
+                ]
+            },
+            "designerId": "792894ad-9ceb-4b55-92ee-f32a5fd8f9c1"
+        }
+    ]
+}

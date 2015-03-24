@@ -1,0 +1,221 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "mycontainer1",
+        "designer|userClassName": "CarList",
+        "layout": "hbox"
+    },
+    "designerId": "629501a1-696c-4d4d-91f6-ffa252e4b165",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 3,
+                "store": "CarDataStore",
+                "title": null
+            },
+            "designerId": "8a42d03e-cc6b-4709-9c2d-1da54ef93574",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "38857f59-97f1-48b9-bbb9-90c458a8aea6"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelect",
+                        "implHandler": [
+                            "// grab a reference to the detailPanel via itemId",
+                            "// the # in front of the id indicates that we would like to grab a reference by",
+                            "debugger;",
+                            "var detailPanel = this.child('#detailPanel');",
+                            "// update the detailPanel with data",
+                            "// this will trigger the tpl to become updates",
+                            "detailPanel.update(record.data);",
+                            "",
+                            "var chart = this.down('#qualityChart');",
+                            "var qualityData = record.get('qualities');",
+                            "chart.store.loadData(qualityData);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "b48796a1-f385-4cc1-80ea-9e28a6b8a459"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "manufacturer",
+                        "text": "Manufacturer"
+                    },
+                    "designerId": "b99e6156-0aa0-451d-b34d-c74b1d81b5c3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "model",
+                        "text": "Model"
+                    },
+                    "designerId": "ef083fad-10ae-42db-bc37-ddaaa5c1398a"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "price",
+                        "text": "Price"
+                    },
+                    "designerId": "5c488aed-7d1a-4725-8804-7bf21a0cb2e3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "wiki",
+                        "flex": 1,
+                        "text": "Wiki"
+                    },
+                    "designerId": "aa075f88-e6ae-4b8a-bb41-abc4263579a5"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "img",
+                        "text": "Img"
+                    },
+                    "designerId": "6577c6bb-1778-4a39-977c-363ea864bf90"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "qualities",
+                        "text": "Qualities"
+                    },
+                    "designerId": "89c794a4-670f-4a0c-b429-ac0c0a9e0505"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "center",
+                "defaults": [
+                    "{",
+                    "    margin: \"10, 10, 10, 10\",",
+                    "    height: \"20px\"",
+                    "}"
+                ],
+                "layout": "vbox",
+                "layout|flex": 1,
+                "layout|margins": "auto",
+                "title": "Actions"
+            },
+            "designerId": "40fcd26d-5b55-4193-8f3c-32ff62637406",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": null,
+                        "layout|margins": null,
+                        "margin": "",
+                        "text": "New Car",
+                        "width": null
+                    },
+                    "designerId": "ea6cb925-2346-4a35-80dc-3a21ff8e9d22"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": null,
+                        "layout|margins": null,
+                        "margin": "",
+                        "text": "Edit Car",
+                        "width": null
+                    },
+                    "designerId": "52d02996-9754-44e7-9042-a4f7881a3ca6"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": null,
+                        "layout|margins": null,
+                        "margin": "",
+                        "text": "Delete Car",
+                        "width": null
+                    },
+                    "designerId": "f4d8bd16-d5d7-4480-b573-bb3ce660d381"
+                }
+            ]
+        }
+    ]
+}
