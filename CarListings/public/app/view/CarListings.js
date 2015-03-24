@@ -48,6 +48,12 @@ Ext.define('CarListings.view.CarListings', {
                     xtype: 'gridpanel',
                     flex: 1,
                     store: 'CarDataStore',
+                    listeners: {
+                        select: {
+                            fn: me.onGridpanelSelect,
+                            scope: me
+                        }
+                    },
                     columns: [
                         {
                             xtype: 'gridcolumn',
@@ -67,26 +73,20 @@ Ext.define('CarListings.view.CarListings', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'wiki',
-                            text: 'Wiki'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'img',
-                            text: 'Img',
+                            text: 'Wiki',
                             flex: 1
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'quality',
-                            text: 'Quality'
+                            dataIndex: 'img',
+                            text: 'Img'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'qualities',
+                            text: 'Qualities'
                         }
-                    ],
-                    listeners: {
-                        select: {
-                            fn: me.onGridpanelSelect,
-                            scope: me
-                        }
-                    }
+                    ]
                 },
                 {
                     xtype: 'panel',
@@ -174,7 +174,7 @@ Ext.define('CarListings.view.CarListings', {
         detailPanel.update(record.data);
 
         var chart = this.down('#qualityChart');
-        var qualityData = record.get('quality');
+        var qualityData = record.get('qualities');
         chart.store.loadData(qualityData);
     },
 

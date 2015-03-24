@@ -16,6 +16,7 @@ class QualitySeeder extends Seeder{
     public function run(){
         $this->quality->truncate();
 
+        // ======================================== //
         $this->quality->create([
             'car_id' => 1,
             'name'   => 'overall',
@@ -51,5 +52,44 @@ class QualitySeeder extends Seeder{
             'name'   => 'accessories',
             'rating' => 2
         ]);
+        // ======================================== //
+
+        // ======================================== //
+        $this->quality->create([
+            'car_id' => 2,
+            'name'   => 'overall',
+            'rating' => 8
+        ]);
+
+        $this->quality->create([
+            'car_id' => 2,
+            'name'   => 'mechanical',
+            'rating' => 5
+        ]);
+
+        $this->quality->create([
+            'car_id' => 2,
+            'name'   => 'powertrain',
+            'rating' => 6
+        ]);
+
+        $this->quality->create([
+            'car_id' => 2,
+            'name'   => 'body',
+            'rating' => 1
+        ]);
+
+        $this->quality->create([
+            'car_id' => 2,
+            'name'   => 'interior',
+            'rating' => 3
+        ]);
+
+        $this->quality->create([
+            'car_id' => 2,
+            'name'   => 'accessories',
+            'rating' => 7
+        ]);
+        // ======================================== //
     }
 }

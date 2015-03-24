@@ -15,10 +15,6 @@ Route::get('/', function (){
     return redirect('index.html');
 });
 
-Route::get('test', function (){
-    return 'worked';
-});
-
 Route::get('data/cars', 'CarController@index');
 
 Route::controllers([

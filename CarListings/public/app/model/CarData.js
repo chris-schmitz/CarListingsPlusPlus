@@ -37,7 +37,7 @@ Ext.define('CarListings.model.CarData', {
             name: 'img'
         },
         {
-            name: 'quality'
+            name: 'qualities'
         }
     ]
 });
