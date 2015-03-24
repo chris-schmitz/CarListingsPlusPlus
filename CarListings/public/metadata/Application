@@ -14,6 +14,11 @@
         "stores": [
             "CarDataStore",
             "CarChartStore"
+        ],
+        "views": [
+            "CarList",
+            "CarDetails",
+            "CarChart"
         ]
     },
     "designerId": "application"

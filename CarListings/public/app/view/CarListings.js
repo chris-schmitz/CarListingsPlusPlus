@@ -17,14 +17,10 @@ Ext.define('CarListings.view.CarListings', {
     extend: 'Ext.panel.Panel',
 
     requires: [
-        'Ext.grid.Panel',
-        'Ext.grid.View',
-        'Ext.grid.column.Column',
-        'Ext.XTemplate',
-        'Ext.chart.Chart',
-        'Ext.chart.axis.Category',
-        'Ext.chart.axis.Numeric',
-        'Ext.chart.series.Column'
+        'CarListings.view.CarList',
+        'CarListings.view.CarDetails',
+        'CarListings.view.CarChart',
+        'Ext.panel.Panel'
     ],
 
     frame: true,
@@ -45,142 +41,23 @@ Ext.define('CarListings.view.CarListings', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'gridpanel',
-                    flex: 1,
-                    store: 'CarDataStore',
-                    listeners: {
-                        select: {
-                            fn: me.onGridpanelSelect,
-                            scope: me
-                        }
-                    },
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'manufacturer',
-                            text: 'Manufacturer'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'model',
-                            text: 'Model'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'price',
-                            text: 'Price'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'wiki',
-                            text: 'Wiki',
-                            flex: 1
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'img',
-                            text: 'Img'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'qualities',
-                            text: 'Qualities'
-                        }
-                    ]
+                    xtype: 'mycontainer1',
+                    flex: 1
                 },
                 {
-                    xtype: 'panel',
+                    xtype: 'mypanel8',
                     flex: 1,
-                    margins: '5 0 0 0 ',
-                    itemId: 'detailPanel',
-                    margin: '',
-                    tpl: [
-                        '<img src="data/{img}" style="float:right" />',
-                        'Manufacturer: {manufacturer}',
-                        'Model: <a href="{wiki}" target="_blank">{model}</a><br /> Price: {price:usMoney}'
-                    ]
+                    margins: '5 0 0 0 '
                 },
                 {
-                    xtype: 'panel',
+                    xtype: 'mypanel9',
                     flex: 1,
-                    margins: '5 0 0 0 ',
-                    height: 126,
-                    layout: 'fit',
-                    items: [
-                        {
-                            xtype: 'chart',
-                            height: 250,
-                            itemId: 'qualityChart',
-                            width: 400,
-                            animate: true,
-                            insetPadding: 20,
-                            store: 'CarChartStore',
-                            axes: [
-                                {
-                                    type: 'Category',
-                                    fields: [
-                                        'name'
-                                    ],
-                                    title: 'Quality',
-                                    position: 'bottom'
-                                },
-                                {
-                                    type: 'Numeric',
-                                    fields: [
-                                        'rating'
-                                    ],
-                                    majorTickSteps: 4,
-                                    title: 'Score',
-                                    maximum: 5,
-                                    minimum: 0,
-                                    position: 'left'
-                                }
-                            ],
-                            series: [
-                                {
-                                    type: 'column',
-                                    label: {
-                                        display: 'insideEnd',
-                                        field: 'rating',
-                                        color: '#333',
-                                        'text-anchor': 'middle'
-                                    },
-                                    xField: 'name',
-                                    yField: 'rating'
-                                }
-                            ],
-                            listeners: {
-                                dblclick: {
-                                    fn: me.onQualityChartDblClick,
-                                    scope: me
-                                }
-                            }
-                        }
-                    ]
+                    margins: '5 0 0 0 '
                 }
             ]
         });
 
         me.callParent(arguments);
-    },
-
-    onGridpanelSelect: function(rowmodel, record, index, eOpts) {
-        // grab a reference to the detailPanel via itemId
-        // the # in front of the id indicates that we would like to grab a reference by
-        debugger;
-        var detailPanel = this.child('#detailPanel');
-        // update the detailPanel with data
-        // this will trigger the tpl to become updates
-        detailPanel.update(record.data);
-
-        var chart = this.down('#qualityChart');
-        var qualityData = record.get('qualities');
-        chart.store.loadData(qualityData);
-    },
-
-    onQualityChartDblClick: function(e, eOpts) {
-        debugger;
-        console.log('clicked this: ' + this);
     }
 
 });

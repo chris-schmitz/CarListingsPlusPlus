@@ -23,283 +23,45 @@
     "designerId": "9599e63b-6bae-476e-9799-30ccc2b53f05",
     "cn": [
         {
-            "type": "Ext.grid.Panel",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "store": "CarDataStore",
-                "title": null
+                "layout|flex": 1
             },
-            "designerId": "8a42d03e-cc6b-4709-9c2d-1da54ef93574",
-            "cn": [
-                {
-                    "type": "Ext.grid.View",
-                    "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "designerId": "38857f59-97f1-48b9-bbb9-90c458a8aea6"
-                },
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onGridpanelSelect",
-                        "implHandler": [
-                            "// grab a reference to the detailPanel via itemId",
-                            "// the # in front of the id indicates that we would like to grab a reference by",
-                            "debugger;",
-                            "var detailPanel = this.child('#detailPanel');",
-                            "// update the detailPanel with data",
-                            "// this will trigger the tpl to become updates",
-                            "detailPanel.update(record.data);",
-                            "",
-                            "var chart = this.down('#qualityChart');",
-                            "var qualityData = record.get('qualities');",
-                            "chart.store.loadData(qualityData);"
-                        ],
-                        "name": "select",
-                        "scope": "me"
-                    },
-                    "designerId": "b48796a1-f385-4cc1-80ea-9e28a6b8a459"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "manufacturer",
-                        "text": "Manufacturer"
-                    },
-                    "designerId": "b99e6156-0aa0-451d-b34d-c74b1d81b5c3"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "model",
-                        "text": "Model"
-                    },
-                    "designerId": "ef083fad-10ae-42db-bc37-ddaaa5c1398a"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "price",
-                        "text": "Price"
-                    },
-                    "designerId": "5c488aed-7d1a-4725-8804-7bf21a0cb2e3"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "wiki",
-                        "flex": 1,
-                        "text": "Wiki"
-                    },
-                    "designerId": "aa075f88-e6ae-4b8a-bb41-abc4263579a5"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "img",
-                        "text": "Img"
-                    },
-                    "designerId": "6577c6bb-1778-4a39-977c-363ea864bf90"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "qualities",
-                        "text": "Qualities"
-                    },
-                    "designerId": "89c794a4-670f-4a0c-b429-ac0c0a9e0505"
-                }
-            ]
+            "designerId": "dcb8ac3a-792b-4dc4-9e8f-0aa7301eb460",
+            "masterInstanceId": "629501a1-696c-4d4d-91f6-ffa252e4b165"
         },
         {
-            "type": "Ext.panel.Panel",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "detailPanel",
                 "layout|flex": 1,
-                "layout|margins": "5 0 0 0 ",
-                "margin": "",
-                "title": null
+                "layout|margins": "5 0 0 0 "
             },
-            "designerId": "0afa56f9-3561-4b2b-b575-534eb2355e85",
-            "cn": [
-                {
-                    "type": "Ext.XTemplate",
-                    "reference": {
-                        "name": "tpl",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "tpl",
-                        "implHandler": [
-                            "<img src=\"data/{img}\" style=\"float:right\" />",
-                            "Manufacturer: {manufacturer}",
-                            "Model: <a href=\"{wiki}\" target=\"_blank\">{model}</a><br /> Price: {price:usMoney}"
-                        ]
-                    },
-                    "designerId": "792894ad-9ceb-4b55-92ee-f32a5fd8f9c1"
-                }
-            ]
+            "designerId": "6cf132fc-d901-4d92-96f6-ebb6782e0c40",
+            "masterInstanceId": "4e3fd824-4784-4edf-996a-abb2ce74cfcd"
         },
         {
-            "type": "Ext.panel.Panel",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "height": 126,
-                "layout": "fit",
                 "layout|flex": 1,
-                "layout|margins": "5 0 0 0 ",
-                "title": null
+                "layout|margins": "5 0 0 0 "
             },
-            "designerId": "4aa43cb5-e990-441e-8887-0437ddbf933e",
-            "cn": [
-                {
-                    "type": "Ext.chart.Chart",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "animate": [
-                            "true"
-                        ],
-                        "dock": null,
-                        "height": 250,
-                        "insetPadding": 20,
-                        "itemId": "qualityChart",
-                        "store": "CarChartStore",
-                        "width": 400
-                    },
-                    "designerId": "8cd363fc-4763-43e2-ae8b-11cc97c68940",
-                    "isBuiltIn": true,
-                    "iconCls": "icon-column-chart",
-                    "autoName": "ColumnChart",
-                    "cn": [
-                        {
-                            "type": "Ext.chart.axis.Category",
-                            "reference": {
-                                "name": "axes",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fields": [
-                                    "name"
-                                ],
-                                "title": "Quality"
-                            },
-                            "designerId": "2a36ddf3-e4ab-4b9f-88b9-bcf55205ae4b"
-                        },
-                        {
-                            "type": "Ext.chart.axis.Numeric",
-                            "reference": {
-                                "name": "axes",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fields": [
-                                    "rating"
-                                ],
-                                "majorTickSteps": 4,
-                                "maximum": 5,
-                                "minimum": 0,
-                                "title": "Score"
-                            },
-                            "designerId": "7ea66c4b-9e80-4955-b238-10daf766486c"
-                        },
-                        {
-                            "type": "Ext.chart.series.Column",
-                            "reference": {
-                                "name": "series",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "label": [
-                                    "{ display: 'insideEnd', field: 'rating', color: '#333', 'text-anchor': 'middle' }",
-                                    ""
-                                ],
-                                "xField": "name",
-                                "yField": [
-                                    "rating"
-                                ]
-                            },
-                            "designerId": "02c27dc0-bf36-4a47-b0ff-a9895cb55335"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onQualityChartDblClick",
-                                "implHandler": [
-                                    "debugger;",
-                                    "console.log('clicked this: ' + this);"
-                                ],
-                                "name": "dblclick",
-                                "scope": "me"
-                            },
-                            "designerId": "db9fb419-60f6-4845-a3cc-a72199b5145c"
-                        }
-                    ]
-                }
-            ]
+            "designerId": "739def00-0eb9-44fc-82bb-7e8cd90d1350",
+            "masterInstanceId": "347791e1-333d-47cb-aefc-1d2ad641bbd4"
         }
     ]
 }

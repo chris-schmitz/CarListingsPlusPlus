@@ -28,6 +28,11 @@ Ext.application({
         'CarDataStore',
         'CarChartStore'
     ],
+    views: [
+        'CarList',
+        'CarDetails',
+        'CarChart'
+    ],
     name: 'CarListings',
 
     launch: function() {
